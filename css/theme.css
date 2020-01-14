@@ -1,0 +1,103 @@
+/**
+ * ====================
+ *  @Package EFT Theme
+ * ====================
+ */
+
+/* =======Google Font ============ */
+@import url('https://fonts.googleapis.com/css?family=Mali:300i,400i,500i,700i&display=swap');
+/* ==========  Reset All Style  ============ */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Mali', cursive;
+    font-weight: 500;
+    transition: .5s all ease;
+    -webkit-transition: .5s all ease;
+    /* font-family: 'Acme', sans-serif; */
+}
+body{
+    background: #343a40;
+    color: #d0d0cb;
+}
+.h1, h1 {
+    font-size: 2.5rem;
+    font-size: 20px;
+    font-family: 'Mali', cursive;
+    font-weight: 700;
+}
+p{
+    font-family: 'Mali', cursive;
+    font-weight: 500;
+}
+.bg-black{
+    background-color: #2b3035 !important;
+}
+:root{
+    --white: #fff;
+}
+
+/* ==========  Menu Section =========== */
+.menu_nav{
+    width: 100%;
+    font-weight: 700;
+}
+.sub_dropdown{
+   background-color:  #343a40;
+  
+}
+@media (min-width: 768px){
+    .dropdown:hover> .dropdown-menu{
+        display: block;
+        margin-top: -2px;
+    }
+
+}
+.header-section {
+    border-bottom: 1px solid #23272b;
+   
+}
+
+/* =========  main section ============ */
+.excerpt{
+    color: #bbb;
+}
+.thumbnail-img{
+    height: 165px;
+    overflow: hidden;
+}
+.post_meta, .post_meta a{
+    color:#626262;
+    font-size:14px;
+    font-weight: 300;
+    text-decoration: none;
+}
+.post_meta a:hover{
+    color: var(--white);
+}
+.readmore_btn>a{
+    border-radius: 2px;
+    font-size:14px;
+}
+.wp-block-quote {
+    border-left: 3px solid #9b3b01;
+}
+.wp-block-quote p {
+    margin-left: 10px;
+    font-weight: 300;
+}
+/* ----- pagination -------- */
+
+.page-link {
+    background-color: #000;
+    color: #fff;
+}
+.page-item.active .page-link {
+    background-color:#343a40 !important;
+    border-color: #fff;
+}
+.page-link:hover {
+    color: #fff;
+    background-color:#343a40;
+    border-color:#fff;
+}
