@@ -1,6 +1,7 @@
 <!-- 
 * ====================
  *  @Package EFT Theme
+ ^^^ Single.php to show content
  * ====================
  */
  -->
@@ -13,6 +14,18 @@
                    <?php the_post_thumbnail(null,array(
                         'class' => 'img-fluid'
                     ));  ?>
+                                        <div class="cate-shows">
+                    <?php
+                    $categories = get_the_category();
+                    $separator = '/';
+                    $output = '';
+                    if ( ! empty( $categories ) ) {
+                        foreach( $categories as $category ) {
+                            $output .= '<a class="p-1 text-decoration-none text-light" href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+                        }
+                        echo trim( $output, $separator );
+                    }?>
+                    </div>
                 </div>
             </div> <!--col-md-5-->
             <div class="col-md-12">
@@ -28,11 +41,9 @@
                          <?php the_content(); ?>
                     </p>
                 </div> <!--.excerpt-->
-                <div class="readmore-btn">
-                    <a class="btn bg-dark btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a>
-                    <a class="btn bg-dark btn-social-icon btn-twitter"><span class="fa fa-facebook"></span></a>
-                    <a class="btn bg-dark btn-social-icon btn-linkedin"><span class="fa fa-linkedin"></span></a>
-                    <a class="btn bg-dark btn-social-icon btn-instagram"><span class="fa fa-instagram"></span></a>
+                <?php include get_template_directory(  )."/eft-template/social-share.php" ?>
+                <div class="tag-show pt-2">
+                <?php esc_attr( the_tags( 'Tags: <span class="p-2 bg-dark ml-1" >','</span><span class="p-1 bg-dark ml-1">', '<span>') )  ?>
                 </div>
             </div>
         </div>

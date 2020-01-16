@@ -1,6 +1,7 @@
 /**
  * ====================
  *  @Package EFT Theme
+ ***** This is main style file on @EFT Theme
  * ====================
  */
 
@@ -14,7 +15,6 @@
     font-weight: 500;
     transition: .5s all ease;
     -webkit-transition: .5s all ease;
-    /* font-family: 'Acme', sans-serif; */
 }
 body{
     background: #343a40;
@@ -30,14 +30,15 @@ p{
     font-family: 'Mali', cursive;
     font-weight: 500;
 }
-.bg-black{
-    background-color: #2b3035 !important;
-}
+/* ========== Call css Variable ======== */
 :root{
     --white: #fff;
+    --black:  #2b3035
 }
-
-/* ==========  Menu Section =========== */
+.bg-black{
+    background-color: var(--black) !important;
+}
+/* ==========  Nav Menu Section =========== */
 .menu_nav{
     width: 100%;
     font-weight: 700;
@@ -58,7 +59,7 @@ p{
    
 }
 
-/* =========  main section ============ */
+/* =========  main conten section ============ */
 .excerpt{
     color: #bbb;
 }
@@ -86,18 +87,58 @@ p{
     margin-left: 10px;
     font-weight: 300;
 }
+.cate-shows{
+     position: absolute;
+     top:0;
+     background-color: #000;
+     z-index: 999;
+     padding: 0px 17px 8px 1px;
+     border-radius: 0px 0px 46px 3px;
+     opacity: .7;
+     font-weight: 300;
+}
 /* ----- pagination -------- */
 
 .page-link {
     background-color: #000;
-    color: #fff;
+    color: var(--white);
 }
 .page-item.active .page-link {
     background-color:#343a40 !important;
-    border-color: #fff;
+    border-color: var(--white);
 }
 .page-link:hover {
-    color: #fff;
+    color: var(--white);
     background-color:#343a40;
-    border-color:#fff;
+    border-color:var(--white);
+}
+
+/*=========== Tags show below the Content ============ */
+
+.tag-show a{
+color: #bbb;
+text-decoration: none;
+}
+.tag-show a:hover{
+    color: var(--white)
+}
+
+/*========== archive desc design ========*/
+.archive_desc>p{
+    font-weight: 300 !important;
+    color: #bbb;
+}
+
+/* =========== category list ========= */
+.list-unstyled li ul{
+    list-style-type: none;
+}
+.cat-item{
+     padding: .2em ;
+}
+.cat-item>a{
+    color: #bbb;
+}
+.cat-item>a:hover{
+    color: var(--white);
 }

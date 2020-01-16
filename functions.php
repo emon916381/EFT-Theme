@@ -62,6 +62,21 @@ include_once get_template_directory()."/inc_functions/popular.php"; //popular_po
 
 include_once get_template_directory()."/inc_functions/custom_functions.php"; //All theme Custom functions
 
+
+/** Make Theme Options */
+
 require get_template_directory()."/theme_option/ReduxCore/framework.php";
 
 require_once get_template_directory()."/theme_option/sample/sample-config.php";
+
+/** Check Theme Update  */
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/emon916381/EFT-Theme',
+	__FILE__,
+	'unique-plugin-or-theme-slug'
+);
+$myUpdateChecker->getVcsApi()->enableReleaseAssets();
+//Optional: Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('master');
+

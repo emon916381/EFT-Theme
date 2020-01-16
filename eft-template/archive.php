@@ -1,11 +1,12 @@
 <!-- 
 * ====================
  *  @Package EFT Theme
+ Archive tempalte.......
  * ====================
  */
  -->
 
-<article class="standerd_article" id="aricle-no-<?php echo $post->ID; ?>">
+ <article class="standerd_article" id="aricle-no-<?php echo $post->ID; ?>">
     <div class="container-fluid bg-black">
         <div class="row p-2 ">
             <div class="col-md-5 pl-0">
@@ -13,18 +14,6 @@
                    <a href="<?php the_permalink(); ?>"> <?php the_post_thumbnail(null,array(
                         'class' => 'img-fluid'
                     ));?></a>
-                    <div class="cate-shows">
-                    <?php
-                    $categories = get_the_category();
-                    $separator = '/';
-                    $output = '';
-                    if ( ! empty( $categories ) ) {
-                        foreach( $categories as $category ) {
-                            $output .= '<a class="p-1 text-decoration-none text-light" href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
-                        }
-                        echo trim( $output, $separator );
-                    }?>
-                    </div>
                 </div>
             </div> <!--col-md-5-->
             <div class="col-md-7">
@@ -44,7 +33,7 @@
                     </p>
                 </div> <!--.excerpt-->
                 <div class="readmore_btn">
-                    <a href="<?php the_permalink(); ?>" class="btn-secondary p-1 text-decoration-none text-light">Read More</a> 
+                    <a href="<?php the_permalink(); ?>" class="btn-secondary p-1 text-decoration-none text-light">Read More</a>
                 </div>
             </div>
         </div>

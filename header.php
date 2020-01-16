@@ -39,13 +39,6 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php global $eft_option;?>
-<style>
-body{
-	background-color: <?php echo  $eft_option['bg-color'];?> ;
-}
-</style>
-
 <!-- Menu section -->
 <header class="header-area">
 	 <div class="header-section bg-black">
