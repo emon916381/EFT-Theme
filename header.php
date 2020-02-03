@@ -39,6 +39,21 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php global $eft_option; ?> 
+
+  <!-- Theme Style section -->
+<style>
+:root{
+    --white: <?php echo $eft_option['link-hover-color']; ?> !important;
+    --black: <?php  echo $eft_option['eft-layout']; ?> !important;
+    --quote: <?php  echo $eft_option['eft-quote']; ?> !important;
+	--link-color: <?php  echo $eft_option['eft-link']; ?> !important;
+	--aft-head: <?php echo $eft_option['eft-cont-head']; ?> !important;
+    --bg-color: <?php  echo $eft_option['eft-bg-color']; ?> !important;
+}
+</style>
+
+
 <!-- Menu section -->
 <header class="header-area">
 	 <div class="header-section bg-black">

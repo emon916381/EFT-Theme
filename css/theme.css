@@ -17,24 +17,29 @@
     -webkit-transition: .5s all ease;
 }
 body{
-    background: #343a40;
-    color: #d0d0cb;
+    background: var(--bg-color);
+    color: var(--aft-head);
 }
 .h1, h1 {
     font-size: 2.5rem;
     font-size: 20px;
     font-family: 'Mali', cursive;
     font-weight: 700;
+    color: var(--aft-head);
 }
 p{
     font-family: 'Mali', cursive;
     font-weight: 500;
 }
-/* ========== Call css Variable ======== */
-:root{
-    --white: #fff;
-    --black:  #2b3035
+a{
+    color: var(--link-color);
 }
+a:hover{
+    color: var(--white);
+    text-decoration-color: var(--quote);
+}
+/* ========== Call css Variable ======== */
+
 .bg-black{
     background-color: var(--black) !important;
 }
@@ -44,8 +49,10 @@ p{
     font-weight: 700;
 }
 .sub_dropdown{
-   background-color:  #343a40;
-  
+    background-color:  var(--bg-color);
+}
+.sub_dropdown> li{
+    text-align: center;
 }
 @media (min-width: 768px){
     .dropdown:hover> .dropdown-menu{
@@ -55,17 +62,28 @@ p{
 
 }
 .header-section {
-    border-bottom: 1px solid #23272b;
+    border-bottom: 1px solid var(--bg-color);
    
 }
 
 /* =========  main conten section ============ */
 .excerpt{
-    color: #bbb;
+    color: var(--link-color);
 }
 .thumbnail-img{
     height: 165px;
     overflow: hidden;
+}
+.thumbnail-img>a::before{
+    content: '';
+    width: 95%;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    transition: 1s all ease;
+}
+.thumbnail-img>a:hover::before{
+    background-color:rgb(0, 0, 0,.3);
 }
 .post_meta, .post_meta a{
     color:#626262;
@@ -81,7 +99,7 @@ p{
     font-size:14px;
 }
 .wp-block-quote {
-    border-left: 3px solid #9b3b01;
+    border-left: 3px solid var(--quote);
 }
 .wp-block-quote p {
     margin-left: 10px;
@@ -90,7 +108,7 @@ p{
 .cate-shows{
      position: absolute;
      top:0;
-     background-color: #000;
+     background-color:  var(--black);
      z-index: 999;
      padding: 0px 17px 8px 1px;
      border-radius: 0px 0px 46px 3px;
@@ -100,33 +118,43 @@ p{
 /* ----- pagination -------- */
 
 .page-link {
-    background-color: #000;
+    background-color: var(--black);
     color: var(--white);
 }
 .page-item.active .page-link {
-    background-color:#343a40 !important;
+    background-color:var(--bg-color) !important;
     border-color: var(--white);
 }
 .page-link:hover {
     color: var(--white);
-    background-color:#343a40;
+    background-color:var(--bg-color);
     border-color:var(--white);
 }
 
 /*=========== Tags show below the Content ============ */
 
 .tag-show a{
-color: #bbb;
+color: var(--link-color);
 text-decoration: none;
 }
 .tag-show a:hover{
-    color: var(--white)
+    color: var(--white);
 }
 
+
+/* ========== Single pagination =========== */
+.prev_post>a , .next_post>p>a{
+    font-weight: 300;
+    text-decoration: none;
+    color: var(--link-color);
+}
+.prev_post>a:hover , .next_post>p>a:hover{
+    color:var(--white);
+}
 /*========== archive desc design ========*/
 .archive_desc>p{
     font-weight: 300 !important;
-    color: #bbb;
+    color: var(--link-color);
 }
 
 /* =========== category list ========= */
@@ -137,8 +165,21 @@ text-decoration: none;
      padding: .2em ;
 }
 .cat-item>a{
-    color: #bbb;
+    color: var(--link-color);
 }
 .cat-item>a:hover{
     color: var(--white);
+}
+
+/*   Footer widget   */
+#menu-footer-menu{
+    padding-left: 10%;
+}
+.eft-footer-title::before {
+    content: '';
+    height: 15px;
+    width: 5px;
+    background-color: var(--quote);
+    display: inline-block;
+    margin-right: 2px;
 }

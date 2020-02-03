@@ -1,4 +1,3 @@
-
 <?php
 /**
  * ====================
@@ -59,6 +58,7 @@ include_once get_template_directory()."/inc_functions/eft-style.php";//all style
 
 include_once get_template_directory()."/inc_functions/eft_walker_nav.php"; //nav menu walker
 include_once get_template_directory()."/inc_functions/popular.php"; //popular_post
+include_once get_template_directory()."/inc_functions/eft-widget.php"; //popular_post
 
 include_once get_template_directory()."/inc_functions/custom_functions.php"; //All theme Custom functions
 
@@ -69,14 +69,21 @@ require get_template_directory()."/theme_option/ReduxCore/framework.php";
 
 require_once get_template_directory()."/theme_option/sample/sample-config.php";
 
-/** Check Theme Update  */
-require 'plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/emon916381/EFT-Theme',
-	__FILE__,
-	'unique-plugin-or-theme-slug'
-);
-$myUpdateChecker->getVcsApi()->enableReleaseAssets();
-//Optional: Set the branch that contains the stable release.
-$myUpdateChecker->setBranch('master');
 
+add_action( "customize_register", "default_customizer_opt" );
+function default_customizer_opt( $wp_customize ) {
+
+ //=============================================================
+ // Remove header image and widgets option from theme customizer
+ //=============================================================
+ $wp_customize->remove_control("header_image");
+
+ //=============================================================
+ // Remove Colors, Background image, and Static front page 
+ // option from theme customizer     
+ //=============================================================
+ $wp_customize->remove_section("colors");
+ $wp_customize->remove_section("background_image");
+ $wp_customize->remove_section("static_front_page");
+
+}

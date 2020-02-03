@@ -12,11 +12,9 @@
             <?php include get_template_directory()."/eft-template/social-share.php" ?> 
         </div>
         <div class="popular-post p-2">
-            <?php include get_template_directory()."/eft-template/popular-post.php" ?> 
+            <?php if(is_active_sidebar( 'sidebar-home' )){
+                dynamic_sidebar( 'sidebar-home' );
+            } ?>
         </div>
-        <div class="popular-post p-2">
-        <ul class="list-unstyled">
-    <?php wp_list_categories(); ?> 
-    </ul>
     </div>
 </div>

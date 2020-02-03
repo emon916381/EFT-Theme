@@ -27,6 +27,15 @@ function eft_style_and_js_file(){
 add_action( 'wp_enqueue_scripts','eft_style_and_js_file' );
 
 
+function eft_admin_style_and_js_file(){
+    $theme_ver = wp_get_theme() -> get('Version');
+    wp_enqueue_style( 'theme_admin_css', get_theme_file_uri('/css/eft-admin.css'), array(), $theme_ver, 'all' );
+
+}
+add_action( 'admin_enqueue_scripts','eft_admin_style_and_js_file' );
+
+
+
 
 
 

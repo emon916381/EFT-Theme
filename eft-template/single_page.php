@@ -32,21 +32,30 @@
                 <h1>
                     <?php the_title() ?>
                 </h1>
+                <?php if(!is_page()){ ?>
+
                 <div class="post_meta">
                     <p class="text-right text-light"> <i class="fa fa-eye"></i> <?php echo setPostViews(get_the_ID());?> Views</p>
                     <a class="ctg_link_ele" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?> "><?php the_author() ?></a>-<?php echo eft_data_and_time();?> 
                 </div>
+                <?php } ?>
                 <div class="excerpt p-1 text-justify">
                     <p class="mb-1">
                          <?php the_content(); ?>
                     </p>
                 </div> <!--.excerpt-->
+
+                <?php if( !is_page() ): ?>
                 <?php include get_template_directory(  )."/eft-template/social-share.php" ?>
                 <div class="tag-show pt-2">
-                <?php esc_attr( the_tags( 'Tags: <span class="p-2 bg-dark ml-1" >','</span><span class="p-1 bg-dark ml-1">', '<span>') )  ?>
+                <?php esc_attr( the_tags( 'Tags: <span class="p-2 bg-dark ml-1" >#','</span><span class="p-1 bg-dark ml-1">#', '<span>') )  ?>
                 </div>
+                <?php echo eft_single_navigation(); ?> 
+                <?php endif ?>
+
             </div>
         </div>
+      
     </div>   
    
 </article>

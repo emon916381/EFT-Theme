@@ -87,8 +87,17 @@ function bootstrap_pagination( \WP_Query $wp_query = null, $echo = true ) {
 	return null;
 }
 
+/**======== Make Single page Pagination ============= */
 
 
+function eft_single_navigation(){
+	$nav ='<div class="row p-2 pt-4"><div class="col-md-6 bg-dark prev_post">';
+	$prev .= get_previous_post_link('%link', '<< Previous <br> %title');
+	$nav .= $prev.'</div><div class="col-md-6 bg-dark next_post"> <p class="text-right">';
+	$next = get_next_post_link('%link', 'Next >></br>%title');
+	$nav .=	$next.'</p></div></div>';
+	return $nav;
 
+}
 
 

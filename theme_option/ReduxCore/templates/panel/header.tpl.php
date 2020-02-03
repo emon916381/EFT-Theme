@@ -22,7 +22,7 @@ if ( $this->parent->args_class->dev_mode_forced ) {
 
 	$localhost_bit = '';
 	if ( Redux_Helpers::is_local_host() ) {
-		$is_localhost  = true;
+		$is_localhost  = false;
 		$localhost_bit = esc_html__( 'you are working in a localhost environment', 'redux-framework' );
 	}
 
